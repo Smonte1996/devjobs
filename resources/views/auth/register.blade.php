@@ -22,6 +22,16 @@
                 <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
+             
+            <div class="mt-4">
+                <x-input-label for="rol" :value="__('¿Que tipo de cuenta deseas en devjobs?')" />
+                <select name="rol" id="rol" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full block mt-1">
+                    <option value="">-- selecionar el tipo --</option>
+                    <option value="1">Developer - Obtener Empleo</option>
+                    <option value="2">Recuiter - Publicar empleo</option>
+                </select>
+                <x-input-error :messages="$errors->get('rol')" class="mt-2" />
+            </div>
 
             <!-- Password -->
             <div class="mt-4">
@@ -53,11 +63,11 @@
                 <x-link :href="route('password.request')">
                  Olvidaste tu password 
               </x-link>
-            
-         </div>
-            <x-primary-button class="w-full justify-center">
-                {{ __('Register') }}
-            </x-primary-button>
+         </div>    
+         <x-primary-button class="w-full justify-center">
+            {{ __('Register') }}
+        </x-primary-button>  
         </form>
+        
     </x-auth-card>
 </x-guest-layout>
