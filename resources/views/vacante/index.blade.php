@@ -7,16 +7,15 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            @if (session()->has('mensaje'))
+        @if (session()->has('mensaje'))
                 <div class="uppercase border border-green-600 bg-green-100 text-gray-700 font-bold p-2 my-3">
                     {{session('mensaje')}}
                 </div>
             @endif
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("vacantes") }}
-                </div>
-            </div>
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            
+           <livewire:mostrar-vacantes>
         </div>
+    </div>
     </div>
 </x-app-layout>
